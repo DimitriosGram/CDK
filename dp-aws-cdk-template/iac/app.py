@@ -4,8 +4,8 @@ from aws.aws_stack import RBStackName
 app = cdk.App()
 
 # set up for local development, variable will be available during deployment.
-dev_account = "344170542049"
-prod_account = "556812392285"
+dev_account = "111111111111"
+prod_account = "111111111111"
 
 # Variables passed from the GitHub CI/CD pipeline's `cdk deploy` command
 branch = "release" if app.node.try_get_context("branch") == "main" else "dev"
