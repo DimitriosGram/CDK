@@ -7,7 +7,7 @@ from iac.aws.aws_stack import RBStackName
 @pytest.fixture(scope="session", autouse=True)
 def template() -> Template:
     region = os.environ.get("AWS_REGION", "eu-west-2")
-    account = os.environ.get("AWS_ACCOUNT", "344170542049")
+    account = os.environ.get("AWS_ACCOUNT", "1111111111111")
     env = cdk.Environment(region=region, account=account)
     ecr_repo = "dp-rb-repo-name"
     lambda_function_name = "RBLambdaName"
