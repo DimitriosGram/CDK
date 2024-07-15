@@ -27,7 +27,7 @@ class HelperStack(Stack):
         self.ecr_repo = kwargs.pop("ecr_repo")
         self.lambda_function_name = kwargs.pop("lambda_function_name")
         self.image_tag = kwargs.pop("image_tag")
-        self.email = f"your.email+{self.branch_name}@recognisebank.co.uk"
+        self.email = f"your.email+{self.branch_name}@gmail.com"
         super().__init__(scope, construct_id, **kwargs)
 
         self.constructs = ConstructDict()
