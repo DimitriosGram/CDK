@@ -79,7 +79,7 @@ def test_s3_bucket_access(template: Template) -> None:
                             "Action": "s3:*",
                             "Effect": "Allow",
                             "Principal": {
-                                "AWS": Match.string_like_regexp("arn:aws:iam::(344170542049|556812392285):root"),
+                                "AWS": Match.string_like_regexp("arn:aws:iam::(11111111111|111111111111111):root"),
                             },
                             "Resource": [
                                 {"Fn::GetAtt": [Match.string_like_regexp("rbbucketname*"), "Arn"]},
