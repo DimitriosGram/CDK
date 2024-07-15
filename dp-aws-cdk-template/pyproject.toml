@@ -1,0 +1,88 @@
+[tool.pytest.ini_options]
+addopts = [
+    "--import-mode=importlib",
+]
+
+pythonpath = [
+    ".",
+    "src",
+    "iac"
+]
+
+[tool.coverage.run]
+branch = true
+source = ["src", "iac/aws"]
+omit = ["venv/*",".venv/*","tests/*","aws/tests/*", "__init__.py"]
+
+[tool.coverage.report]
+fail_under = 95
+show_missing = true
+skip_covered = false
+skip_empty = true
+
+[tool.coverage.html]
+directory = 'test_reports/html'
+show_contexts = true
+skip_covered = false
+skip_empty = true
+
+[tool.ruff]
+line-length = 120
+exclude = [
+    ".bzr",
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".hg",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".pytype",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",
+    "venv",
+    "cdk.out",
+    "*.json",
+]
+
+[tool.black]
+line-length = 120
+
+[tool.mypy]
+ignore_missing_imports=true
+exclude=["cdk.out/"]
+
+
+[[tool.mypy.overrides]]
+module="src.*"
+no_implicit_optional=false
+disable_error_code=[
+    "import",
+]
+
+[[tool.mypy.overrides]]
+module="aws.*"
+no_implicit_optional=false
+disable_error_code=[
+    "import",
+    "union-attr",
+    "attr-defined",
+    "assignment"
+]
+
+[[tool.mypy.overrides]]
+module="tests.*"
+no_implicit_optional=false
+disable_error_code=[
+    "import",
+    "union-attr",
+    "attr-defined"
+]
