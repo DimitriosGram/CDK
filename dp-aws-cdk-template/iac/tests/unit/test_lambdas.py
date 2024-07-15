@@ -70,5 +70,5 @@ def test_subscription_endpoint(template: Template) -> None:
     # Make sure subscription sends email to team account
     template.has_resource_properties(
         "AWS::SNS::Subscription",
-        Match.object_like({"Endpoint": Match.string_like_regexp("your.email\\+[a-z]+@recognisebank.co.uk")}),
+        Match.object_like({"Endpoint": Match.string_like_regexp("your.email\\+[a-z]+@gmail.com")}),
     )
