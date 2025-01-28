@@ -26,7 +26,7 @@ class RBStackName(HelperStack):
         tag_dict = {
             "creator": "DataPlatform",
             "owner": "DataPlatform",
-            "service-level": "Check Confluence",
+            "service-level": "Check Docs",
             "function": "Check Confluence",
             "purpose": "Check Confluence",
             "project": "Check Confluence",
